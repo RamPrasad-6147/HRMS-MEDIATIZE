@@ -279,6 +279,7 @@ def send_project_assignment_email(
     project_role: str,
     project_description: Optional[str] = None,
     start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
     assigned_date: Optional[str] = None,
     assigned_by_name: Optional[str] = None,
     login_url: Optional[str] = None,
@@ -315,6 +316,7 @@ def send_project_assignment_email(
         .replace("{{ project_role }}", project_role or "N/A")
         .replace("{{ project_description }}", clean_desc)
         .replace("{{ start_date }}", start_date or "N/A")
+        .replace("{{ end_date }}", end_date or "N/A")
         .replace("{{ assigned_date }}", assigned_date or "N/A")
         .replace(
             "{{ assigned_by_name }}",
@@ -341,6 +343,9 @@ Assignment Date:
 
 Project Start Date:
 {start_date or "N/A"}
+
+Project End Date:
+{end_date or "N/A"}
 
 Assigned By:
 {assigned_by_name or "HR Department"}

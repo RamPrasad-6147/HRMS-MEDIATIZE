@@ -3,245 +3,624 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>HRMS Announcement</title>
+
+    <style>
+        /* =========================================================
+           Mediatize HRMS — Announcement Email
+           Visual redesign only
+           Existing functionality/placeholders preserved
+           ========================================================= */
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            background-color: #f3f7f5;
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            background-color: #f3f7f5;
+        }
+
+        .email-container {
+            width: 600px;
+            max-width: 600px;
+            background-color: #ffffff;
+        }
+
+        .content-area {
+            padding: 42px 42px 34px;
+        }
+
+        .header-area {
+            padding: 34px 30px;
+        }
+
+        .footer-area {
+            padding: 28px 42px;
+        }
+
+        .announcement-title {
+            font-size: 24px !important;
+            line-height: 1.3 !important;
+        }
+
+        .announcement-content {
+            font-size: 15px !important;
+            line-height: 1.75 !important;
+        }
+
+        .meta-label {
+            width: 125px;
+        }
+
+        .cta-button {
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #047857 !important;
+        }
+
+        .url-box {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+        }
+
+        /* =========================================================
+           Mobile
+           ========================================================= */
+        @media only screen and (max-width: 620px) {
+
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .content-area {
+                padding: 30px 22px 26px !important;
+            }
+
+            .header-area {
+                padding: 28px 20px !important;
+            }
+
+            .footer-area {
+                padding: 24px 22px !important;
+            }
+
+            .announcement-title {
+                font-size: 21px !important;
+            }
+
+            .announcement-content {
+                font-size: 14px !important;
+                line-height: 1.7 !important;
+            }
+
+            .meta-label {
+                width: 105px !important;
+            }
+
+            .meta-cell {
+                font-size: 12px !important;
+            }
+
+            .cta-button {
+                display: block !important;
+                width: auto !important;
+                max-width: 100% !important;
+                padding: 14px 24px !important;
+            }
+
+            .url-box {
+                font-size: 12px !important;
+                padding: 11px 12px !important;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+
+            .content-area {
+                padding: 26px 17px 24px !important;
+            }
+
+            .header-area {
+                padding: 25px 16px !important;
+            }
+
+            .footer-area {
+                padding: 22px 17px !important;
+            }
+
+            .announcement-title {
+                font-size: 20px !important;
+            }
+
+            .meta-label {
+                width: 95px !important;
+            }
+        }
+
+        /* =========================================================
+           Accessibility / Outlook-safe behavior
+           ========================================================= */
+        @media (prefers-reduced-motion: reduce) {
+            .cta-button {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body style="
     margin: 0;
     padding: 0;
-    background-color: #f4f6f8;
+    background-color: #f3f7f5;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
 ">
 
+    <!-- Outer Email Background -->
     <table
         width="100%"
         cellpadding="0"
         cellspacing="0"
         border="0"
-        style="background-color: #f4f6f8; padding: 40px 15px;"
+        role="presentation"
+        class="email-wrapper"
+        style="
+            width: 100%;
+            background-color: #f3f7f5;
+            padding: 38px 14px;
+        "
     >
         <tr>
             <td align="center">
 
+                <!-- Main Email Container -->
                 <table
                     width="600"
                     cellpadding="0"
                     cellspacing="0"
                     border="0"
+                    role="presentation"
+                    class="email-container"
                     style="
+                        width: 600px;
                         max-width: 600px;
-                        width: 100%;
                         background-color: #ffffff;
-                        border-radius: 10px;
+                        border-radius: 16px;
                         overflow: hidden;
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.09);
                     "
                 >
 
-                    <!-- Header -->
+                    <!-- =================================================
+                         Header
+                         ================================================= -->
                     <tr>
                         <td
                             align="center"
+                            class="header-area"
                             style="
-                                background-color: #1f2937;
-                                padding: 30px 20px;
+                                padding: 34px 30px;
+                                background-color: #10251d;
+                                background-image: linear-gradient(
+                                    135deg,
+                                    #10251d 0%,
+                                    #17382b 58%,
+                                    #064e3b 100%
+                                );
                             "
                         >
+
+                            <!-- Green Accent -->
+                            <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                role="presentation"
+                                style="margin: 0 auto 16px;"
+                            >
+                                <tr>
+                                    <td
+                                        width="44"
+                                        height="4"
+                                        style="
+                                            width: 44px;
+                                            height: 4px;
+                                            background-color: #22c55e;
+                                            border-radius: 10px;
+                                            font-size: 0;
+                                            line-height: 0;
+                                        "
+                                    >
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+
                             <h1 style="
                                 margin: 0;
                                 color: #ffffff;
-                                font-size: 26px;
+                                font-size: 25px;
+                                line-height: 1.3;
                                 font-weight: 700;
-                                letter-spacing: 0.5px;
+                                letter-spacing: 0.3px;
                             ">
                                 Mediatize Tech
                             </h1>
 
                             <p style="
                                 margin: 8px 0 0;
-                                color: #d1d5db;
-                                font-size: 14px;
+                                color: #b7d4c7;
+                                font-size: 13px;
+                                line-height: 1.5;
                                 font-weight: 500;
+                                letter-spacing: 0.2px;
                             ">
                                 Human Resource Management System
                             </p>
+
                         </td>
                     </tr>
 
-                    <!-- Main Content Body -->
+
+                    <!-- =================================================
+                         Main Content
+                         ================================================= -->
                     <tr>
-                        <td style="padding: 40px 40px 30px;">
+                        <td
+                            class="content-area"
+                            style="
+                                padding: 42px 42px 34px;
+                                background-color: #ffffff;
+                            "
+                        >
 
-                            <!-- Badge / Category -->
-                            <div style="margin-bottom: 15px;">
-                                <span style="
-                                    display: inline-block;
-                                    background-color: #dbeafe;
-                                    color: #1e40af;
-                                    font-size: 12px;
+                            <!-- Category Badge -->
+                            <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                role="presentation"
+                                style="margin-bottom: 18px;"
+                            >
+                                <tr>
+                                    <td
+                                        style="
+                                            background-color: #ecfdf5;
+                                            border: 1px solid #bbf7d0;
+                                            border-radius: 30px;
+                                            padding: 6px 13px;
+                                        "
+                                    >
+                                        <span style="
+                                            color: #047857;
+                                            font-size: 11px;
+                                            line-height: 1;
+                                            font-weight: 700;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.8px;
+                                        ">
+                                            {{ announcement_scope_label }}
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Announcement Title -->
+                            <h2
+                                class="announcement-title"
+                                style="
+                                    margin: 0 0 16px;
+                                    color: #10251d;
+                                    font-size: 24px;
+                                    line-height: 1.3;
                                     font-weight: 700;
-                                    padding: 4px 12px;
-                                    border-radius: 12px;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.5px;
-                                ">
-                                    {{ announcement_scope_label }}
-                                </span>
-                            </div>
-
-                            <h2 style="
-                                margin: 0 0 16px;
-                                color: #111827;
-                                font-size: 22px;
-                                font-weight: 700;
-                                line-height: 1.3;
-                            ">
+                                    letter-spacing: -0.2px;
+                                "
+                            >
                                 {{ announcement_title }}
                             </h2>
 
+
+                            <!-- Greeting -->
                             <p style="
-                                margin: 0 0 15px;
-                                color: #374151;
+                                margin: 0 0 24px;
+                                color: #475569;
                                 font-size: 15px;
                                 line-height: 1.7;
                             ">
-                                Hello <strong>{{ employee_name }}</strong>,
+                                Hello <strong style="color: #10251d;">{{ employee_name }}</strong>,
                             </p>
 
-                            <!-- Meta info card -->
+
+                            <!-- =================================================
+                                 Meta Information Card
+                                 ================================================= -->
                             <table
                                 width="100%"
                                 cellpadding="0"
                                 cellspacing="0"
                                 border="0"
+                                role="presentation"
                                 style="
-                                    background-color: #f9fafb;
-                                    border: 1px solid #e5e7eb;
-                                    border-radius: 6px;
-                                    padding: 12px 16px;
-                                    margin-bottom: 20px;
+                                    width: 100%;
+                                    background-color: #f8fbfa;
+                                    border: 1px solid #dce9e3;
+                                    border-radius: 10px;
+                                    margin-bottom: 22px;
                                 "
                             >
                                 <tr>
-                                    <td style="font-size: 13px; color: #6b7280; width: 110px; font-weight: 600;">
-                                        Published Date:
-                                    </td>
-                                    <td style="font-size: 13px; color: #111827; font-weight: 600;">
-                                        {{ published_date }}
+                                    <td style="
+                                        padding: 15px 17px;
+                                        border-bottom: 1px solid #e5eee9;
+                                    ">
+
+                                        <table
+                                            width="100%"
+                                            cellpadding="0"
+                                            cellspacing="0"
+                                            border="0"
+                                            role="presentation"
+                                        >
+                                            <tr>
+                                                <td
+                                                    class="meta-cell meta-label"
+                                                    style="
+                                                        width: 125px;
+                                                        color: #64748b;
+                                                        font-size: 12px;
+                                                        line-height: 1.5;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Published Date:
+                                                </td>
+
+                                                <td
+                                                    class="meta-cell"
+                                                    style="
+                                                        color: #1e293b;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ published_date }}
+                                                </td>
+                                            </tr>
+                                        </table>
+
                                     </td>
                                 </tr>
+
                                 {{ project_info_row }}
+
                             </table>
 
-                            <!-- Announcement Content -->
-                            <div style="
-                                background-color: #ffffff;
-                                border-left: 4px solid #2563eb;
-                                padding: 18px 20px;
-                                margin-bottom: 25px;
-                                background-color: #f8fafc;
-                                border-radius: 0 6px 6px 0;
-                            ">
-                                <div style="
-                                    margin: 0;
-                                    font-size: 15px;
-                                    color: #334155;
-                                    line-height: 1.7;
-                                    white-space: pre-wrap;
-                                ">{{ announcement_content }}</div>
-                            </div>
 
-                            <!-- CTA Button -->
+                            <!-- =================================================
+                                 Announcement Content
+                                 ================================================= -->
                             <table
                                 width="100%"
                                 cellpadding="0"
                                 cellspacing="0"
                                 border="0"
-                                style="margin-bottom: 25px;"
+                                role="presentation"
+                                style="
+                                    width: 100%;
+                                    margin-bottom: 27px;
+                                "
+                            >
+                                <tr>
+                                    <td
+                                        style="
+                                            background-color: #f7faf8;
+                                            border: 1px solid #e0ebe5;
+                                            border-left: 4px solid #16a34a;
+                                            border-radius: 0 10px 10px 0;
+                                            padding: 19px 20px;
+                                        "
+                                    >
+
+                                        <div
+                                            class="announcement-content"
+                                            style="
+                                                margin: 0;
+                                                color: #334155;
+                                                font-size: 15px;
+                                                line-height: 1.75;
+                                                white-space: pre-wrap;
+                                            "
+                                        >{{ announcement_content }}</div>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- =================================================
+                                 CTA Button
+                                 ================================================= -->
+                            <table
+                                width="100%"
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                role="presentation"
+                                style="
+                                    width: 100%;
+                                    margin-bottom: 27px;
+                                "
                             >
                                 <tr>
                                     <td align="center">
+
                                         <a
                                             href="{{ login_url }}"
                                             target="_blank"
+                                            class="cta-button"
                                             style="
                                                 display: inline-block;
-                                                background-color: #2563eb;
+                                                background-color: #16a34a;
                                                 color: #ffffff;
                                                 text-decoration: none;
-                                                font-size: 15px;
-                                                font-weight: 600;
-                                                padding: 12px 28px;
-                                                border-radius: 6px;
+                                                font-size: 14px;
+                                                line-height: 1.2;
+                                                font-weight: 700;
+                                                padding: 14px 30px;
+                                                border-radius: 8px;
+                                                letter-spacing: 0.15px;
+                                                box-shadow: 0 5px 14px rgba(22, 163, 74, 0.22);
                                             "
                                         >
                                             View in HRMS
                                         </a>
+
                                     </td>
                                 </tr>
                             </table>
 
-                            <!-- Copyable URL Box -->
+
+                            <!-- =================================================
+                                 Fallback URL
+                                 ================================================= -->
                             <p style="
-                                margin: 0 0 8px;
-                                color: #6b7280;
-                                font-size: 13px;
+                                margin: 0 0 9px;
+                                color: #64748b;
+                                font-size: 12px;
+                                line-height: 1.6;
                             ">
                                 If the button above does not work, copy and paste this URL into your browser:
                             </p>
 
-                            <div style="
-                                background-color: #f3f4f6;
-                                border: 1px solid #e5e7eb;
-                                border-radius: 6px;
-                                padding: 10px 12px;
-                                word-break: break-all;
-                                font-family: monospace;
-                                font-size: 13px;
-                                color: #1f2937;
-                            ">
+                            <div
+                                class="url-box"
+                                style="
+                                    background-color: #f8fafc;
+                                    border: 1px solid #dbe4e8;
+                                    border-radius: 8px;
+                                    padding: 11px 13px;
+                                    word-break: break-all;
+                                    overflow-wrap: anywhere;
+                                    font-family: Consolas, Monaco, monospace;
+                                    font-size: 12px;
+                                    line-height: 1.55;
+                                    color: #334155;
+                                "
+                            >
                                 {{ login_url }}
                             </div>
 
                         </td>
                     </tr>
 
-                    <!-- Footer -->
+
+                    <!-- =================================================
+                         Footer
+                         ================================================= -->
                     <tr>
                         <td
+                            align="center"
+                            class="footer-area"
                             style="
-                                background-color: #f9fafb;
-                                border-top: 1px solid #e5e7eb;
-                                padding: 25px 40px;
+                                background-color: #f7faf8;
+                                border-top: 1px solid #e2ebe6;
+                                padding: 28px 42px;
                                 text-align: center;
                             "
                         >
+
+                            <!-- Footer Accent -->
+                            <table
+                                cellpadding="0"
+                                cellspacing="0"
+                                border="0"
+                                role="presentation"
+                                style="margin: 0 auto 14px;"
+                            >
+                                <tr>
+                                    <td
+                                        width="28"
+                                        height="3"
+                                        style="
+                                            width: 28px;
+                                            height: 3px;
+                                            background-color: #16a34a;
+                                            border-radius: 10px;
+                                            font-size: 0;
+                                            line-height: 0;
+                                        "
+                                    >
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+
                             <p style="
                                 margin: 0 0 6px;
-                                color: #6b7280;
+                                color: #1e3a2f;
                                 font-size: 13px;
-                                font-weight: 600;
+                                line-height: 1.5;
+                                font-weight: 700;
                             ">
                                 Mediatize Tech HRMS
                             </p>
 
                             <p style="
-                                margin: 0 0 10px;
-                                color: #9ca3af;
+                                margin: 0 0 12px;
+                                color: #64748b;
                                 font-size: 12px;
+                                line-height: 1.5;
                             ">
                                 Mediatize Tech Pvt. Ltd.
                             </p>
 
                             <p style="
                                 margin: 0;
-                                color: #9ca3af;
+                                color: #94a3b8;
                                 font-size: 11px;
-                                line-height: 1.4;
+                                line-height: 1.6;
                             ">
                                 This is an automated email notification from Mediatize Tech HRMS. Please do not reply directly to this message.
                             </p>
+
                         </td>
                     </tr>
 

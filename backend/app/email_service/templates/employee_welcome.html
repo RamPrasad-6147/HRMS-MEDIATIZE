@@ -3,289 +3,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Welcome to Mediatize Tech HRMS</title>
+
+    <style>
+        /* =========================================================
+           Mediatize Tech HRMS — Welcome Email
+           Visual redesign only
+           Existing functionality and placeholders preserved
+           ========================================================= */
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            background-color: #f3f7f5;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .email-container {
+            width: 600px;
+            max-width: 600px;
+        }
+
+        .header-content {
+            padding: 36px 38px;
+        }
+
+        .body-content {
+            padding: 42px 40px 36px;
+        }
+
+        .footer-content {
+            padding: 27px 36px;
+        }
+
+        .account-card,
+        .login-card,
+        .url-card,
+        .security-card {
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .login-button {
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .login-button:hover {
+            background-color: #047857 !important;
+            box-shadow: 0 7px 18px rgba(22, 163, 74, 0.25) !important;
+        }
+
+        .login-url {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+        }
+
+        /* =========================================================
+           Tablet / Mobile
+           ========================================================= */
+
+        @media only screen and (max-width: 620px) {
+
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .header-content {
+                padding: 30px 24px !important;
+            }
+
+            .body-content {
+                padding: 32px 24px 28px !important;
+            }
+
+            .footer-content {
+                padding: 24px !important;
+            }
+
+            .main-heading {
+                font-size: 23px !important;
+            }
+
+            .body-text {
+                font-size: 14px !important;
+            }
+
+            .card-content {
+                padding: 20px !important;
+            }
+
+            .login-button {
+                padding: 14px 28px !important;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+
+            .header-content {
+                padding: 26px 18px !important;
+            }
+
+            .body-content {
+                padding: 28px 18px 24px !important;
+            }
+
+            .footer-content {
+                padding: 22px 18px !important;
+            }
+
+            .main-heading {
+                font-size: 21px !important;
+            }
+
+            .card-content {
+                padding: 18px !important;
+            }
+
+            .account-label,
+            .account-value {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .account-label {
+                padding-bottom: 2px !important;
+            }
+
+            .account-value {
+                padding-top: 2px !important;
+            }
+
+            .login-button {
+                display: block !important;
+                width: auto !important;
+            }
+
+            .login-url {
+                font-size: 12px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .account-card,
+            .login-card,
+            .url-card,
+            .security-card,
+            .login-button {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body style="
     margin: 0;
     padding: 0;
-    background-color: #f4f6f8;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    background-color: #f3f7f5;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #1e293b;
 ">
 
+    <!-- =========================================================
+         EMAIL BACKGROUND
+         ========================================================= -->
+
     <table
+        role="presentation"
         width="100%"
-        cellpadding="0"
         cellspacing="0"
+        cellpadding="0"
         border="0"
-        style="background-color: #f4f6f8; padding: 40px 15px;"
+        style="
+            width: 100%;
+            background-color: #f3f7f5;
+            padding: 40px 14px;
+        "
     >
         <tr>
             <td align="center">
 
+                <!-- =================================================
+                     MAIN EMAIL CONTAINER
+                     ================================================= -->
+
                 <table
+                    role="presentation"
                     width="600"
-                    cellpadding="0"
                     cellspacing="0"
+                    cellpadding="0"
                     border="0"
+                    class="email-container"
                     style="
+                        width: 600px;
                         max-width: 600px;
-                        width: 100%;
                         background-color: #ffffff;
-                        border-radius: 10px;
+                        border-radius: 16px;
                         overflow: hidden;
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                        box-shadow: 0 10px 32px rgba(15, 23, 42, 0.09);
                     "
                 >
 
-                    <!-- Header -->
+                    <!-- =================================================
+                         HEADER
+                         ================================================= -->
+
                     <tr>
                         <td
-                            align="center"
+                            class="header-content"
                             style="
-                                background-color: #1f2937;
-                                padding: 30px 20px;
+                                padding: 36px 38px;
+                                background-color: #10251d;
+                                background-image: linear-gradient(
+                                    135deg,
+                                    #10251d 0%,
+                                    #17382b 55%,
+                                    #064e3b 100%
+                                );
                             "
                         >
-                            <h1 style="
-                                margin: 0;
-                                color: #ffffff;
-                                font-size: 26px;
-                                font-weight: 700;
-                                letter-spacing: 0.5px;
-                            ">
-                                Mediatize Tech
-                            </h1>
 
-                            <p style="
-                                margin: 8px 0 0;
-                                color: #d1d5db;
-                                font-size: 14px;
-                                font-weight: 500;
-                            ">
-                                Human Resource Management System
-                            </p>
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                            >
+                                <tr>
+                                    <td>
+
+                                        <!-- Green Header Accent -->
+
+                                        <table
+                                            role="presentation"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                            style="margin-bottom: 16px;"
+                                        >
+                                            <tr>
+                                                <td
+                                                    width="42"
+                                                    height="4"
+                                                    style="
+                                                        width: 42px;
+                                                        height: 4px;
+                                                        background-color: #22c55e;
+                                                        border-radius: 10px;
+                                                        font-size: 0;
+                                                        line-height: 0;
+                                                    "
+                                                >
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <h1 style="
+                                            margin: 0;
+                                            color: #ffffff;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 25px;
+                                            line-height: 1.3;
+                                            font-weight: 700;
+                                            letter-spacing: -0.3px;
+                                        ">
+                                            Mediatize Tech
+                                        </h1>
+
+                                        <p style="
+                                            margin: 7px 0 0;
+                                            color: #b7d4c7;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.5;
+                                            font-weight: 500;
+                                            letter-spacing: 0.15px;
+                                        ">
+                                            Human Resource Management System
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
                         </td>
                     </tr>
 
-                    <!-- Main Content -->
-                    <tr>
-                        <td style="padding: 40px 40px 30px;">
 
-                            <h2 style="
-                                margin: 0 0 16px;
-                                color: #111827;
-                                font-size: 22px;
-                                font-weight: 700;
-                            ">
+                    <!-- =================================================
+                         MAIN CONTENT
+                         ================================================= -->
+
+                    <tr>
+                        <td
+                            class="body-content"
+                            style="
+                                padding: 42px 40px 36px;
+                                background-color: #ffffff;
+                            "
+                        >
+
+                            <!-- Welcome Badge -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin-bottom: 17px;"
+                            >
+                                <tr>
+                                    <td
+                                        style="
+                                            background-color: #ecfdf5;
+                                            border: 1px solid #bbf7d0;
+                                            border-radius: 30px;
+                                            padding: 6px 14px;
+                                        "
+                                    >
+                                        <span style="
+                                            color: #047857;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 10px;
+                                            line-height: 1;
+                                            font-weight: 700;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.8px;
+                                        ">
+                                            Employee Onboarding
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Main Heading -->
+
+                            <h2
+                                class="main-heading"
+                                style="
+                                    margin: 0 0 17px;
+                                    color: #10251d;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 25px;
+                                    line-height: 1.3;
+                                    font-weight: 700;
+                                    letter-spacing: -0.5px;
+                                "
+                            >
                                 Welcome to Mediatize Tech!
                             </h2>
 
-                            <p style="
-                                margin: 0 0 15px;
-                                color: #374151;
-                                font-size: 15px;
-                                line-height: 1.7;
-                            ">
-                                Hello <strong>{{ employee_name }}</strong>,
+
+                            <!-- Greeting -->
+
+                            <p
+                                class="body-text"
+                                style="
+                                    margin: 0 0 16px;
+                                    color: #475569;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 15px;
+                                    line-height: 1.7;
+                                    font-weight: 400;
+                                "
+                            >
+                                Hello
+                                <strong style="
+                                    color: #10251d;
+                                    font-weight: 700;
+                                ">
+                                    {{ employee_name }}
+                                </strong>,
                             </p>
 
-                            <p style="
-                                margin: 0 0 24px;
-                                color: #374151;
-                                font-size: 15px;
-                                line-height: 1.7;
-                            ">
+
+                            <!-- Introduction -->
+
+                            <p
+                                class="body-text"
+                                style="
+                                    margin: 0 0 27px;
+                                    color: #475569;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 15px;
+                                    line-height: 1.75;
+                                    font-weight: 400;
+                                "
+                            >
                                 Your employee account has been successfully created
                                 in the Mediatize Tech HRMS portal.
                             </p>
 
-                            <!-- ACCOUNT DETAILS CARD -->
-                            <div style="
-                                background-color: #f8fafc;
-                                border: 1px solid #e2e8f0;
-                                border-radius: 8px;
-                                padding: 24px;
-                                margin-bottom: 25px;
-                            ">
 
-                                <p style="
-                                    margin: 0 0 16px;
-                                    color: #475569;
-                                    font-size: 13px;
-                                    font-weight: 700;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.8px;
-                                    border-bottom: 1px solid #cbd5e1;
-                                    padding-bottom: 8px;
-                                ">
-                                    ACCOUNT DETAILS
-                                </p>
+                            <!-- =================================================
+                                 ACCOUNT DETAILS CARD
+                                 ================================================= -->
 
-                                <table
-                                    width="100%"
-                                    cellpadding="0"
-                                    cellspacing="0"
-                                    border="0"
-                                >
-
-                                    <tr>
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #64748b;
-                                            font-size: 14px;
-                                            width: 140px;
-                                            font-weight: 600;
-                                        ">
-                                            Employee Code:
-                                        </td>
-
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #0f172a;
-                                            font-size: 14px;
-                                            font-weight: 700;
-                                            font-family: monospace;
-                                        ">
-                                            {{ employee_code }}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #64748b;
-                                            font-size: 14px;
-                                            font-weight: 600;
-                                        ">
-                                            Email:
-                                        </td>
-
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #0f172a;
-                                            font-size: 14px;
-                                            font-weight: 600;
-                                            word-break: break-all;
-                                        ">
-                                            {{ employee_email }}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #64748b;
-                                            font-size: 14px;
-                                            font-weight: 600;
-                                        ">
-                                            Authentication:
-                                        </td>
-
-                                        <td style="
-                                            padding: 6px 0;
-                                            color: #2563eb;
-                                            font-size: 14px;
-                                            font-weight: 700;
-                                        ">
-                                            Email OTP
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                            </div>
-
-                            <!-- HOW TO LOGIN -->
-                            <div style="
-                                background-color: #eff6ff;
-                                border: 1px solid #bfdbfe;
-                                border-radius: 8px;
-                                padding: 24px;
-                                margin-bottom: 25px;
-                            ">
-
-                                <p style="
-                                    margin: 0 0 14px;
-                                    color: #1e3a8a;
-                                    font-size: 14px;
-                                    font-weight: 700;
-                                ">
-                                    HOW TO SIGN IN
-                                </p>
-
-                                <p style="
-                                    margin: 0 0 8px;
-                                    color: #374151;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                ">
-                                    1. Open the Mediatize Tech HRMS portal.
-                                </p>
-
-                                <p style="
-                                    margin: 0 0 8px;
-                                    color: #374151;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                ">
-                                    2. Enter your registered email address.
-                                </p>
-
-                                <p style="
-                                    margin: 0 0 8px;
-                                    color: #374151;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                ">
-                                    3. Request a login verification code.
-                                </p>
-
-                                <p style="
-                                    margin: 0 0 8px;
-                                    color: #374151;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                ">
-                                    4. Enter the 6-digit OTP sent to your email.
-                                </p>
-
-                                <p style="
-                                    margin: 0;
-                                    color: #374151;
-                                    font-size: 14px;
-                                    line-height: 1.7;
-                                ">
-                                    5. You will be securely signed in to HRMS.
-                                </p>
-
-                            </div>
-
-                            <!-- LOGIN BUTTON -->
                             <table
-                                cellpadding="0"
-                                cellspacing="0"
-                                border="0"
+                                role="presentation"
                                 width="100%"
-                                style="margin-bottom: 25px;"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="account-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #f7faf8;
+                                    border: 1px solid #dce9e3;
+                                    border-radius: 12px;
+                                    margin-bottom: 24px;
+                                "
+                            >
+                                <tr>
+                                    <td
+                                        class="card-content"
+                                        style="padding: 23px 22px;"
+                                    >
+
+                                        <!-- Card Heading -->
+
+                                        <table
+                                            role="presentation"
+                                            width="100%"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                            style="margin-bottom: 17px;"
+                                        >
+                                            <tr>
+                                                <td
+                                                    style="
+                                                        color: #14532d;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 12px;
+                                                        line-height: 1.4;
+                                                        font-weight: 700;
+                                                        text-transform: uppercase;
+                                                        letter-spacing: 0.8px;
+                                                        padding-bottom: 10px;
+                                                        border-bottom: 1px solid #d7e6de;
+                                                    "
+                                                >
+                                                    Account Details
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                        <!-- Account Details -->
+
+                                        <table
+                                            role="presentation"
+                                            width="100%"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                        >
+
+                                            <!-- Employee Code -->
+
+                                            <tr>
+                                                <td
+                                                    class="account-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Employee Code:
+                                                </td>
+
+                                                <td
+                                                    class="account-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #10251d;
+                                                        font-family: 'Courier New', Courier, monospace;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ employee_code }}
+                                                </td>
+                                            </tr>
+
+
+                                            <!-- Email -->
+
+                                            <tr>
+                                                <td
+                                                    class="account-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Email:
+                                                </td>
+
+                                                <td
+                                                    class="account-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #10251d;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 600;
+                                                        word-break: break-all;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ employee_email }}
+                                                </td>
+                                            </tr>
+
+
+                                            <!-- Authentication -->
+
+                                            <tr>
+                                                <td
+                                                    class="account-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Authentication:
+                                                </td>
+
+                                                <td
+                                                    class="account-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #047857;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Email OTP
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- =================================================
+                                 HOW TO SIGN IN CARD
+                                 ================================================= -->
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="login-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #f0fdf4;
+                                    border: 1px solid #bbf7d0;
+                                    border-radius: 12px;
+                                    margin-bottom: 25px;
+                                "
+                            >
+                                <tr>
+                                    <td
+                                        class="card-content"
+                                        style="padding: 23px 22px;"
+                                    >
+
+                                        <!-- Section Heading -->
+
+                                        <p style="
+                                            margin: 0 0 17px;
+                                            color: #166534;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.4;
+                                            font-weight: 700;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.7px;
+                                        ">
+                                            How to Sign In
+                                        </p>
+
+
+                                        <!-- Step 1 -->
+
+                                        <p
+                                            class="body-text"
+                                            style="
+                                                margin: 0 0 9px;
+                                                color: #374151;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.7;
+                                            "
+                                        >
+                                            <strong style="color: #166534;">1.</strong>
+                                            Open the Mediatize Tech HRMS portal.
+                                        </p>
+
+
+                                        <!-- Step 2 -->
+
+                                        <p
+                                            class="body-text"
+                                            style="
+                                                margin: 0 0 9px;
+                                                color: #374151;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.7;
+                                            "
+                                        >
+                                            <strong style="color: #166534;">2.</strong>
+                                            Enter your registered email address.
+                                        </p>
+
+
+                                        <!-- Step 3 -->
+
+                                        <p
+                                            class="body-text"
+                                            style="
+                                                margin: 0 0 9px;
+                                                color: #374151;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.7;
+                                            "
+                                        >
+                                            <strong style="color: #166534;">3.</strong>
+                                            Request a login verification code.
+                                        </p>
+
+
+                                        <!-- Step 4 -->
+
+                                        <p
+                                            class="body-text"
+                                            style="
+                                                margin: 0 0 9px;
+                                                color: #374151;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.7;
+                                            "
+                                        >
+                                            <strong style="color: #166534;">4.</strong>
+                                            Enter the 6-digit OTP sent to your email.
+                                        </p>
+
+
+                                        <!-- Step 5 -->
+
+                                        <p
+                                            class="body-text"
+                                            style="
+                                                margin: 0;
+                                                color: #374151;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.7;
+                                            "
+                                        >
+                                            <strong style="color: #166534;">5.</strong>
+                                            You will be securely signed in to HRMS.
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- =================================================
+                                 LOGIN BUTTON
+                                 ================================================= -->
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="width: 100%; margin-bottom: 25px;"
                             >
                                 <tr>
                                     <td align="center">
 
                                         <a
                                             href="{{ login_url }}"
+                                            class="login-button"
                                             style="
                                                 display: inline-block;
-                                                background-color: #2563eb;
+                                                background-color: #16a34a;
                                                 color: #ffffff;
                                                 text-decoration: none;
                                                 padding: 14px 32px;
-                                                border-radius: 6px;
-                                                font-size: 15px;
+                                                border-radius: 8px;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.2;
                                                 font-weight: 700;
-                                                letter-spacing: 0.3px;
-                                                box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+                                                letter-spacing: 0.35px;
+                                                box-shadow: 0 5px 15px rgba(22, 163, 74, 0.22);
                                             "
                                         >
                                             LOGIN TO HRMS
@@ -295,89 +774,157 @@
                                 </tr>
                             </table>
 
-                            <!-- LOGIN URL -->
-                            <div style="
-                                background-color: #f1f5f9;
-                                border-radius: 6px;
-                                padding: 14px 16px;
-                                margin-bottom: 25px;
-                            ">
 
-                                <p style="
-                                    margin: 0 0 6px;
-                                    color: #475569;
-                                    font-size: 12px;
-                                    font-weight: 600;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.5px;
-                                ">
-                                    Login URL:
-                                </p>
+                            <!-- =================================================
+                                 LOGIN URL
+                                 ================================================= -->
 
-                                <p style="
-                                    margin: 0;
-                                    color: #2563eb;
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="url-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #f8fafc;
+                                    border: 1px solid #e2e8f0;
+                                    border-radius: 9px;
+                                    margin-bottom: 25px;
+                                "
+                            >
+                                <tr>
+                                    <td style="padding: 15px 16px;">
+
+                                        <p style="
+                                            margin: 0 0 7px;
+                                            color: #475569;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 11px;
+                                            line-height: 1.4;
+                                            font-weight: 700;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.6px;
+                                        ">
+                                            Login URL:
+                                        </p>
+
+                                        <p
+                                            class="login-url"
+                                            style="
+                                                margin: 0;
+                                                color: #047857;
+                                                font-family: 'Courier New', Courier, monospace;
+                                                font-size: 12px;
+                                                line-height: 1.6;
+                                                word-break: break-all;
+                                                overflow-wrap: anywhere;
+                                            "
+                                        >
+                                            <a
+                                                href="{{ login_url }}"
+                                                style="
+                                                    color: #047857;
+                                                    text-decoration: underline;
+                                                    font-weight: 600;
+                                                "
+                                            >
+                                                {{ login_url }}
+                                            </a>
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- =================================================
+                                 SECURITY NOTICE
+                                 ================================================= -->
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="security-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #f0fdf4;
+                                    border: 1px solid #d1fae5;
+                                    border-left: 4px solid #16a34a;
+                                    border-radius: 0 10px 10px 0;
+                                    margin-bottom: 24px;
+                                "
+                            >
+                                <tr>
+                                    <td style="padding: 16px 17px;">
+
+                                        <p style="
+                                            margin: 0;
+                                            color: #166534;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.65;
+                                            font-weight: 400;
+                                        ">
+                                            <strong style="font-weight: 700;">
+                                                Security Notice:
+                                            </strong>
+                                            HRMS uses passwordless authentication.
+                                            A new 6-digit verification code will be sent
+                                            to your registered email whenever you sign in.
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Security Reminder -->
+
+                            <p
+                                class="body-text"
+                                style="
+                                    margin: 0 0 15px;
+                                    color: #64748b;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                     font-size: 13px;
-                                    word-break: break-all;
-                                    font-family: monospace;
-                                ">
-                                    <a
-                                        href="{{ login_url }}"
-                                        style="
-                                            color: #2563eb;
-                                            text-decoration: underline;
-                                        "
-                                    >
-                                        {{ login_url }}
-                                    </a>
-                                </p>
-
-                            </div>
-
-                            <!-- SECURITY NOTICE -->
-                            <div style="
-                                background-color: #eff6ff;
-                                border-left: 4px solid #2563eb;
-                                padding: 16px;
-                                margin-bottom: 25px;
-                                border-radius: 0 6px 6px 0;
-                            ">
-
-                                <p style="
-                                    margin: 0;
-                                    color: #1e40af;
-                                    font-size: 13.5px;
-                                    line-height: 1.6;
-                                ">
-                                    <strong>Security Notice:</strong>
-                                    HRMS uses passwordless authentication.
-                                    A new 6-digit verification code will be sent
-                                    to your registered email whenever you sign in.
-                                </p>
-
-                            </div>
-
-                            <p style="
-                                margin: 0 0 15px;
-                                color: #64748b;
-                                font-size: 13px;
-                                line-height: 1.6;
-                            ">
+                                    line-height: 1.65;
+                                    font-weight: 400;
+                                "
+                            >
                                 Never share your verification code with anyone.
                                 If you did not expect this account, please contact HR.
                             </p>
 
+
+                            <!-- Signature -->
+
                             <p style="
-                                margin: 25px 0 0;
+                                margin: 26px 0 0;
                                 color: #334155;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                 font-size: 14px;
-                                line-height: 1.6;
+                                line-height: 1.65;
+                                font-weight: 400;
                             ">
                                 Regards,<br>
-                                <strong>Mediatize Tech HRMS</strong><br>
+
+                                <strong style="
+                                    color: #10251d;
+                                    font-weight: 700;
+                                ">
+                                    Mediatize Tech HRMS
+                                </strong>
+                                <br>
+
                                 <span style="
                                     color: #64748b;
                                     font-size: 13px;
+                                    font-weight: 400;
                                 ">
                                     Mediatize Tech Pvt. Ltd.
                                 </span>
@@ -386,22 +933,57 @@
                         </td>
                     </tr>
 
-                    <!-- Footer -->
+
+                    <!-- =================================================
+                         FOOTER
+                         ================================================= -->
+
                     <tr>
                         <td
                             align="center"
+                            class="footer-content"
                             style="
-                                background-color: #f8fafc;
-                                border-top: 1px solid #e2e8f0;
-                                padding: 22px 20px;
+                                background-color: #f7faf8;
+                                border-top: 1px solid #dfeae4;
+                                padding: 27px 36px;
+                                text-align: center;
                             "
                         >
 
+                            <!-- Footer Accent -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin: 0 auto 13px;"
+                            >
+                                <tr>
+                                    <td
+                                        width="28"
+                                        height="3"
+                                        style="
+                                            width: 28px;
+                                            height: 3px;
+                                            background-color: #16a34a;
+                                            border-radius: 10px;
+                                            font-size: 0;
+                                            line-height: 0;
+                                        "
+                                    >
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+
                             <p style="
                                 margin: 0 0 6px;
-                                color: #334155;
+                                color: #1e3a2f;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                 font-size: 13px;
-                                font-weight: 600;
+                                line-height: 1.5;
+                                font-weight: 700;
                             ">
                                 Mediatize Tech Pvt. Ltd.
                             </p>
@@ -409,7 +991,10 @@
                             <p style="
                                 margin: 0;
                                 color: #94a3b8;
-                                font-size: 12px;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                line-height: 1.6;
+                                font-weight: 400;
                             ">
                                 This is an automated email from Mediatize Tech HRMS.
                                 Please do not reply to this email.

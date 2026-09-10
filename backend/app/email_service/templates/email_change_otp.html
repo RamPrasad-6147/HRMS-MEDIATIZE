@@ -1,79 +1,602 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Verify Your New Email Address</title>
+
+    <style>
+        /* =========================================================
+           Mediatize Tech HRMS — Email Verification
+           Visual styling only
+           Existing functionality and placeholders preserved
+           ========================================================= */
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            background-color: #f3f7f5;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .email-container {
+            width: 580px;
+            max-width: 580px;
+        }
+
+        .header-content {
+            padding: 34px 36px;
+        }
+
+        .body-content {
+            padding: 40px 36px 34px;
+        }
+
+        .footer-content {
+            padding: 26px 36px;
+        }
+
+        .otp-code {
+            font-family: "Courier New", Courier, monospace !important;
+            font-size: 36px !important;
+            font-weight: 700 !important;
+            letter-spacing: 8px !important;
+        }
+
+        .security-list {
+            margin: 0;
+            padding-left: 19px;
+        }
+
+        /* Subtle hover effect where supported */
+        .security-card,
+        .otp-card {
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        /* =========================================================
+           Mobile Responsive
+           ========================================================= */
+
+        @media only screen and (max-width: 620px) {
+
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .header-content {
+                padding: 28px 24px !important;
+            }
+
+            .body-content {
+                padding: 32px 24px 28px !important;
+            }
+
+            .footer-content {
+                padding: 24px !important;
+            }
+
+            .otp-code {
+                font-size: 30px !important;
+                letter-spacing: 6px !important;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+
+            .header-content {
+                padding: 25px 18px !important;
+            }
+
+            .body-content {
+                padding: 28px 18px 24px !important;
+            }
+
+            .footer-content {
+                padding: 22px 18px !important;
+            }
+
+            .otp-code {
+                font-size: 27px !important;
+                letter-spacing: 5px !important;
+            }
+
+            .otp-card {
+                padding: 21px 12px !important;
+            }
+
+            .security-card {
+                padding: 15px 16px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .security-card,
+            .otp-card {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f3f4f6; color: #1f2937;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f3f4f6; padding: 30px 15px;">
+
+<body style="
+    margin: 0;
+    padding: 0;
+    background-color: #f3f7f5;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #1e293b;
+">
+
+    <!-- =========================================================
+         Email Background
+         ========================================================= -->
+
+    <table
+        role="presentation"
+        width="100%"
+        cellspacing="0"
+        cellpadding="0"
+        border="0"
+        style="
+            width: 100%;
+            background-color: #f3f7f5;
+            padding: 38px 14px;
+        "
+    >
         <tr>
             <td align="center">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 580px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
-                    <!-- Header -->
+
+                <!-- =================================================
+                     Main Email Container
+                     ================================================= -->
+
+                <table
+                    role="presentation"
+                    width="580"
+                    cellspacing="0"
+                    cellpadding="0"
+                    border="0"
+                    class="email-container"
+                    style="
+                        width: 580px;
+                        max-width: 580px;
+                        background-color: #ffffff;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 10px 32px rgba(15, 23, 42, 0.09);
+                    "
+                >
+
+                    <!-- =================================================
+                         Header
+                         ================================================= -->
+
                     <tr>
-                        <td style="background-color: #1e293b; padding: 28px 32px; text-align: left;">
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <td
+                            class="header-content"
+                            style="
+                                padding: 34px 36px;
+                                background-color: #10251d;
+                                background-image: linear-gradient(
+                                    135deg,
+                                    #10251d 0%,
+                                    #17382b 58%,
+                                    #064e3b 100%
+                                );
+                            "
+                        >
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                            >
                                 <tr>
                                     <td>
-                                        <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 700; letter-spacing: -0.5px;">Mediatize Tech HRMS</h1>
-                                        <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px;">Human Resource Management System</p>
+
+                                        <!-- Green Accent -->
+                                        <table
+                                            role="presentation"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                            style="margin-bottom: 15px;"
+                                        >
+                                            <tr>
+                                                <td
+                                                    width="38"
+                                                    height="4"
+                                                    style="
+                                                        width: 38px;
+                                                        height: 4px;
+                                                        background-color: #22c55e;
+                                                        border-radius: 10px;
+                                                        font-size: 0;
+                                                        line-height: 0;
+                                                    "
+                                                >
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <h1 style="
+                                            margin: 0;
+                                            color: #ffffff;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 23px;
+                                            line-height: 1.3;
+                                            font-weight: 700;
+                                            letter-spacing: -0.2px;
+                                        ">
+                                            Mediatize Tech HRMS
+                                        </h1>
+
+                                        <p style="
+                                            margin: 7px 0 0;
+                                            color: #b7d4c7;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.5;
+                                            font-weight: 500;
+                                        ">
+                                            Human Resource Management System
+                                        </p>
+
                                     </td>
                                 </tr>
                             </table>
+
                         </td>
                     </tr>
 
-                    <!-- Body Content -->
+
+                    <!-- =================================================
+                         Body Content
+                         ================================================= -->
+
                     <tr>
-                        <td style="padding: 36px 32px; background-color: #ffffff;">
-                            <h2 style="margin: 0 0 16px 0; color: #0f172a; font-size: 18px; font-weight: 600;">Verify Your New Email Address</h2>
-                            
-                            <p style="margin: 0 0 20px 0; color: #475569; font-size: 14px; line-height: 1.6;">
-                                Hello {{ employee_name }},
+                        <td
+                            class="body-content"
+                            style="
+                                padding: 40px 36px 34px;
+                                background-color: #ffffff;
+                            "
+                        >
+
+                            <!-- Section Label -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin-bottom: 17px;"
+                            >
+                                <tr>
+                                    <td
+                                        style="
+                                            background-color: #ecfdf5;
+                                            border: 1px solid #bbf7d0;
+                                            border-radius: 30px;
+                                            padding: 6px 13px;
+                                        "
+                                    >
+                                        <span style="
+                                            color: #047857;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 10px;
+                                            line-height: 1;
+                                            font-weight: 700;
+                                            letter-spacing: 0.8px;
+                                            text-transform: uppercase;
+                                        ">
+                                            Account Security
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Main Heading -->
+
+                            <h2 style="
+                                margin: 0 0 17px;
+                                color: #10251d;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 24px;
+                                line-height: 1.3;
+                                font-weight: 700;
+                                letter-spacing: -0.4px;
+                            ">
+                                Verify Your New Email Address
+                            </h2>
+
+
+                            <!-- Greeting -->
+
+                            <p style="
+                                margin: 0 0 20px;
+                                color: #475569;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 15px;
+                                line-height: 1.7;
+                                font-weight: 400;
+                            ">
+                                Hello <strong style="color: #10251d; font-weight: 700;">{{ employee_name }}</strong>,
                             </p>
 
-                            <p style="margin: 0 0 24px 0; color: #475569; font-size: 14px; line-height: 1.6;">
+
+                            <!-- Description -->
+
+                            <p style="
+                                margin: 0 0 26px;
+                                color: #475569;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 14px;
+                                line-height: 1.75;
+                                font-weight: 400;
+                            ">
                                 A request was made to change the email address associated with your HRMS account. Please use the 6-digit verification code below to confirm this new email address:
                             </p>
 
-                            <!-- OTP Box -->
-                            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; text-align: center; margin-bottom: 24px;">
-                                <span style="font-family: 'Courier New', Courier, monospace, monospace; font-size: 36px; font-weight: 700; color: #2563eb; letter-spacing: 8px; display: inline-block;">{{ otp_code }}</span>
-                            </div>
 
-                            <p style="margin: 0 0 20px 0; color: #475569; font-size: 14px; line-height: 1.6;">
-                                This verification code is valid for <strong>{{ expire_minutes }} minutes</strong>.
+                            <!-- =================================================
+                                 OTP Verification Card
+                                 ================================================= -->
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="otp-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #f5faf7;
+                                    border: 1px solid #cfe6d9;
+                                    border-radius: 12px;
+                                    margin-bottom: 25px;
+                                "
+                            >
+                                <tr>
+                                    <td
+                                        align="center"
+                                        style="padding: 25px 15px 23px;"
+                                    >
+
+                                        <p style="
+                                            margin: 0 0 10px;
+                                            color: #64748b;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 11px;
+                                            line-height: 1.4;
+                                            font-weight: 700;
+                                            letter-spacing: 1px;
+                                            text-transform: uppercase;
+                                        ">
+                                            Verification Code
+                                        </p>
+
+                                        <span
+                                            class="otp-code"
+                                            style="
+                                                display: inline-block;
+                                                color: #047857;
+                                                font-family: 'Courier New', Courier, monospace;
+                                                font-size: 36px;
+                                                line-height: 1.2;
+                                                font-weight: 700;
+                                                letter-spacing: 8px;
+                                            "
+                                        >
+                                            {{ otp_code }}
+                                        </span>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Expiration Information -->
+
+                            <p style="
+                                margin: 0 0 23px;
+                                color: #475569;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 14px;
+                                line-height: 1.6;
+                            ">
+                                This verification code is valid for
+                                <strong style="
+                                    color: #10251d;
+                                    font-weight: 700;
+                                ">
+                                    {{ expire_minutes }} minutes
+                                </strong>.
                             </p>
 
-                            <!-- Security Warning -->
-                            <div style="background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 16px; border-radius: 4px; margin-bottom: 24px;">
-                                <p style="margin: 0 0 8px 0; color: #92400e; font-size: 13px; line-height: 1.5; font-weight: 600;">
-                                    Security Notice:
-                                </p>
-                                <ul style="margin: 0; padding-left: 18px; color: #92400e; font-size: 13px; line-height: 1.5;">
-                                    <li>Do not share this verification code with anyone.</li>
-                                    <li>If you did not request this change, please contact HR/administrator immediately.</li>
-                                    <li>Your HRMS account email address will only change after successful OTP verification.</li>
-                                </ul>
-                            </div>
 
-                            <p style="margin: 0; color: #64748b; font-size: 13px; line-height: 1.5;">
+                            <!-- =================================================
+                                 Security Notice
+                                 ================================================= -->
+
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                class="security-card"
+                                style="
+                                    width: 100%;
+                                    background-color: #fffaf0;
+                                    border: 1px solid #f5dfb1;
+                                    border-left: 4px solid #eab308;
+                                    border-radius: 0 10px 10px 0;
+                                    margin-bottom: 24px;
+                                "
+                            >
+                                <tr>
+                                    <td style="padding: 16px 17px;">
+
+                                        <p style="
+                                            margin: 0 0 9px;
+                                            color: #854d0e;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.5;
+                                            font-weight: 700;
+                                        ">
+                                            Security Notice
+                                        </p>
+
+                                        <ul
+                                            class="security-list"
+                                            style="
+                                                margin: 0;
+                                                padding-left: 19px;
+                                                color: #854d0e;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 13px;
+                                                line-height: 1.65;
+                                            "
+                                        >
+                                            <li style="margin-bottom: 5px;">
+                                                Do not share this verification code with anyone.
+                                            </li>
+
+                                            <li style="margin-bottom: 5px;">
+                                                If you did not request this change, please contact HR/administrator immediately.
+                                            </li>
+
+                                            <li>
+                                                Your HRMS account email address will only change after successful OTP verification.
+                                            </li>
+                                        </ul>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Final Security Message -->
+
+                            <p style="
+                                margin: 0;
+                                color: #64748b;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 13px;
+                                line-height: 1.65;
+                                font-weight: 400;
+                            ">
                                 If you did not request this email address change, please ignore this email or secure your account.
                             </p>
+
                         </td>
                     </tr>
 
-                    <!-- Footer -->
+
+                    <!-- =================================================
+                         Footer
+                         ================================================= -->
+
                     <tr>
-                        <td style="background-color: #f8fafc; padding: 20px 32px; border-top: 1px solid #e2e8f0; text-align: center;">
-                            <p style="margin: 0 0 4px 0; color: #64748b; font-size: 12px; font-weight: 500;">Mediatize Tech Pvt. Ltd.</p>
-                            <p style="margin: 0; color: #94a3b8; font-size: 11px;">This is an automated system email. Please do not reply directly to this address.</p>
+                        <td
+                            class="footer-content"
+                            style="
+                                background-color: #f7faf8;
+                                padding: 26px 36px;
+                                border-top: 1px solid #dfeae4;
+                                text-align: center;
+                            "
+                        >
+
+                            <!-- Footer Accent -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin: 0 auto 13px;"
+                            >
+                                <tr>
+                                    <td
+                                        width="28"
+                                        height="3"
+                                        style="
+                                            width: 28px;
+                                            height: 3px;
+                                            background-color: #16a34a;
+                                            border-radius: 10px;
+                                            font-size: 0;
+                                            line-height: 0;
+                                        "
+                                    >
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p style="
+                                margin: 0 0 5px;
+                                color: #1e3a2f;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 12px;
+                                line-height: 1.5;
+                                font-weight: 700;
+                            ">
+                                Mediatize Tech Pvt. Ltd.
+                            </p>
+
+                            <p style="
+                                margin: 0;
+                                color: #94a3b8;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 11px;
+                                line-height: 1.6;
+                                font-weight: 400;
+                            ">
+                                This is an automated system email. Please do not reply directly to this address.
+                            </p>
+
                         </td>
                     </tr>
+
                 </table>
+
             </td>
         </tr>
     </table>
+
 </body>
 </html>

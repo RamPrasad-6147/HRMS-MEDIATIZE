@@ -3,257 +3,779 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Leave Request Approved</title>
+
+    <style>
+        /* =========================================================
+           Mediatize Tech HRMS — Leave Approval Email
+           Visual redesign only
+           Existing functionality and placeholders preserved
+           ========================================================= */
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            background-color: #f3f7f5;
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .email-container {
+            width: 600px;
+            max-width: 600px;
+        }
+
+        .header-content {
+            padding: 36px 38px;
+        }
+
+        .body-content {
+            padding: 42px 40px 36px;
+        }
+
+        .footer-content {
+            padding: 28px 38px;
+        }
+
+        .leave-card {
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-button {
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #047857 !important;
+            box-shadow: 0 7px 18px rgba(22, 163, 74, 0.25) !important;
+        }
+
+        .url-box {
+            word-break: break-all;
+            overflow-wrap: anywhere;
+        }
+
+        /* =========================================================
+           Responsive — Tablet / Mobile
+           ========================================================= */
+
+        @media only screen and (max-width: 620px) {
+
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .header-content {
+                padding: 30px 24px !important;
+            }
+
+            .body-content {
+                padding: 32px 24px 28px !important;
+            }
+
+            .footer-content {
+                padding: 24px !important;
+            }
+
+            .main-heading {
+                font-size: 22px !important;
+            }
+
+            .body-text {
+                font-size: 14px !important;
+            }
+
+            .leave-card-content {
+                padding: 20px !important;
+            }
+
+            .cta-button {
+                padding: 14px 24px !important;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+
+            .header-content {
+                padding: 26px 18px !important;
+            }
+
+            .body-content {
+                padding: 28px 18px 24px !important;
+            }
+
+            .footer-content {
+                padding: 22px 18px !important;
+            }
+
+            .main-heading {
+                font-size: 20px !important;
+            }
+
+            .leave-label,
+            .leave-value {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .leave-label {
+                padding-bottom: 2px !important;
+            }
+
+            .leave-value {
+                padding-top: 2px !important;
+            }
+
+            .cta-button {
+                display: block !important;
+                width: auto !important;
+            }
+
+            .url-box {
+                font-size: 12px !important;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .leave-card,
+            .cta-button {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body style="
     margin: 0;
     padding: 0;
-    background-color: #f4f6f8;
-    font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    background-color: #f3f7f5;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #1e293b;
 ">
 
+    <!-- =========================================================
+         EMAIL BACKGROUND
+         ========================================================= -->
+
     <table
+        role="presentation"
         width="100%"
-        cellpadding="0"
         cellspacing="0"
+        cellpadding="0"
         border="0"
-        style="background-color: #f4f6f8; padding: 40px 15px;"
+        style="
+            width: 100%;
+            background-color: #f3f7f5;
+            padding: 40px 14px;
+        "
     >
         <tr>
             <td align="center">
 
+                <!-- =================================================
+                     MAIN EMAIL CONTAINER
+                     ================================================= -->
+
                 <table
+                    role="presentation"
                     width="600"
-                    cellpadding="0"
                     cellspacing="0"
+                    cellpadding="0"
                     border="0"
+                    class="email-container"
                     style="
+                        width: 600px;
                         max-width: 600px;
-                        width: 100%;
                         background-color: #ffffff;
-                        border-radius: 10px;
+                        border-radius: 16px;
                         overflow: hidden;
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                        box-shadow: 0 10px 32px rgba(15, 23, 42, 0.09);
                     "
                 >
 
-                    <!-- Header -->
+                    <!-- =================================================
+                         HEADER
+                         ================================================= -->
+
                     <tr>
                         <td
-                            align="center"
+                            class="header-content"
                             style="
-                                background-color: #1f2937;
-                                padding: 30px 20px;
+                                padding: 36px 38px;
+                                background-color: #10251d;
+                                background-image: linear-gradient(
+                                    135deg,
+                                    #10251d 0%,
+                                    #17382b 55%,
+                                    #064e3b 100%
+                                );
                             "
                         >
-                            <h1 style="
-                                margin: 0;
-                                color: #ffffff;
-                                font-size: 26px;
-                                font-weight: 700;
-                                letter-spacing: 0.5px;
-                            ">
-                                Mediatize Tech
-                            </h1>
 
-                            <p style="
-                                margin: 8px 0 0;
-                                color: #d1d5db;
-                                font-size: 14px;
-                                font-weight: 500;
-                            ">
-                                Human Resource Management System
-                            </p>
+                            <table
+                                role="presentation"
+                                width="100%"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                            >
+                                <tr>
+                                    <td>
+
+                                        <!-- Green Header Accent -->
+
+                                        <table
+                                            role="presentation"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                            style="margin-bottom: 16px;"
+                                        >
+                                            <tr>
+                                                <td
+                                                    width="42"
+                                                    height="4"
+                                                    style="
+                                                        width: 42px;
+                                                        height: 4px;
+                                                        background-color: #22c55e;
+                                                        border-radius: 10px;
+                                                        font-size: 0;
+                                                        line-height: 0;
+                                                    "
+                                                >
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <h1 style="
+                                            margin: 0;
+                                            color: #ffffff;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 25px;
+                                            line-height: 1.3;
+                                            font-weight: 700;
+                                            letter-spacing: -0.3px;
+                                        ">
+                                            Mediatize Tech
+                                        </h1>
+
+                                        <p style="
+                                            margin: 7px 0 0;
+                                            color: #b7d4c7;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 13px;
+                                            line-height: 1.5;
+                                            font-weight: 500;
+                                        ">
+                                            Human Resource Management System
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
                         </td>
                     </tr>
 
-                    <!-- Main Content Body -->
+
+                    <!-- =================================================
+                         MAIN CONTENT
+                         ================================================= -->
+
                     <tr>
-                        <td style="padding: 40px 40px 30px;">
+                        <td
+                            class="body-content"
+                            style="
+                                padding: 42px 40px 36px;
+                                background-color: #ffffff;
+                            "
+                        >
 
-                            <div style="margin-bottom: 15px;">
-                                <span style="
-                                    display: inline-block;
-                                    background-color: #dcfce7;
-                                    color: #166534;
-                                    font-size: 12px;
+                            <!-- Approval Badge -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin-bottom: 17px;"
+                            >
+                                <tr>
+                                    <td
+                                        style="
+                                            background-color: #ecfdf5;
+                                            border: 1px solid #bbf7d0;
+                                            border-radius: 30px;
+                                            padding: 7px 14px;
+                                        "
+                                    >
+                                        <span style="
+                                            color: #047857;
+                                            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                            font-size: 10px;
+                                            line-height: 1;
+                                            font-weight: 700;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.9px;
+                                        ">
+                                            Approved
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <!-- Main Heading -->
+
+                            <h2
+                                class="main-heading"
+                                style="
+                                    margin: 0 0 17px;
+                                    color: #10251d;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 25px;
+                                    line-height: 1.3;
                                     font-weight: 700;
-                                    padding: 4px 12px;
-                                    border-radius: 12px;
-                                    text-transform: uppercase;
-                                    letter-spacing: 0.5px;
-                                ">
-                                    APPROVED
-                                </span>
-                            </div>
-
-                            <h2 style="
-                                margin: 0 0 16px;
-                                color: #111827;
-                                font-size: 22px;
-                                font-weight: 700;
-                            ">
+                                    letter-spacing: -0.45px;
+                                "
+                            >
                                 Leave Request Approved
                             </h2>
 
-                            <p style="
-                                margin: 0 0 15px;
-                                color: #374151;
-                                font-size: 15px;
-                                line-height: 1.7;
-                            ">
-                                Hello <strong>{{ employee_name }}</strong>,
+
+                            <!-- Greeting -->
+
+                            <p
+                                class="body-text"
+                                style="
+                                    margin: 0 0 16px;
+                                    color: #475569;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 15px;
+                                    line-height: 1.7;
+                                    font-weight: 400;
+                                "
+                            >
+                                Hello
+                                <strong style="
+                                    color: #10251d;
+                                    font-weight: 700;
+                                ">
+                                    {{ employee_name }}
+                                </strong>,
                             </p>
 
-                            <p style="
-                                margin: 0 0 24px;
-                                color: #374151;
-                                font-size: 15px;
-                                line-height: 1.7;
-                            ">
+
+                            <!-- Introduction -->
+
+                            <p
+                                class="body-text"
+                                style="
+                                    margin: 0 0 27px;
+                                    color: #475569;
+                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                    font-size: 15px;
+                                    line-height: 1.75;
+                                    font-weight: 400;
+                                "
+                            >
                                 Your leave request has been approved by HR. Below are the summary details of your approved leave:
                             </p>
 
-                            <!-- Leave Details Card -->
+
+                            <!-- =================================================
+                                 LEAVE DETAILS CARD
+                                 ================================================= -->
+
                             <table
+                                role="presentation"
                                 width="100%"
-                                cellpadding="0"
                                 cellspacing="0"
+                                cellpadding="0"
                                 border="0"
+                                class="leave-card"
                                 style="
-                                    background-color: #f9fafb;
-                                    border: 1px solid #e5e7eb;
-                                    border-radius: 8px;
-                                    padding: 20px;
+                                    width: 100%;
+                                    background-color: #f7faf8;
+                                    border: 1px solid #dce9e3;
+                                    border-radius: 12px;
                                     margin-bottom: 25px;
                                 "
                             >
                                 <tr>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #6b7280; width: 140px; font-weight: 600;">
-                                        Leave Type:
-                                    </td>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #2563eb; font-weight: 700;">
-                                        {{ leave_type }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #6b7280; font-weight: 600;">
-                                        Dates:
-                                    </td>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #111827; font-weight: 600;">
-                                        {{ start_date }} to {{ end_date }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #6b7280; font-weight: 600;">
-                                        Duration:
-                                    </td>
-                                    <td style="padding-bottom: 12px; font-size: 14px; color: #111827; font-weight: 600;">
-                                        {{ duration }} day(s)
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="font-size: 14px; color: #6b7280; font-weight: 600; vertical-align: top;">
-                                        HR Remarks:
-                                    </td>
-                                    <td style="font-size: 14px; color: #374151; line-height: 1.5; vertical-align: top;">
-                                        {{ hr_remarks }}
+                                    <td
+                                        class="leave-card-content"
+                                        style="padding: 23px 22px;"
+                                    >
+
+                                        <!-- Card Heading -->
+
+                                        <table
+                                            role="presentation"
+                                            width="100%"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                            style="margin-bottom: 16px;"
+                                        >
+                                            <tr>
+                                                <td style="
+                                                    color: #14532d;
+                                                    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                    font-size: 12px;
+                                                    line-height: 1.4;
+                                                    font-weight: 700;
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 0.8px;
+                                                    padding-bottom: 10px;
+                                                    border-bottom: 1px solid #d7e6de;
+                                                ">
+                                                    Leave Summary
+                                                </td>
+                                            </tr>
+                                        </table>
+
+
+                                        <!-- Leave Type -->
+
+                                        <table
+                                            role="presentation"
+                                            width="100%"
+                                            cellspacing="0"
+                                            cellpadding="0"
+                                            border="0"
+                                        >
+                                            <tr>
+                                                <td
+                                                    class="leave-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Leave Type:
+                                                </td>
+
+                                                <td
+                                                    class="leave-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #047857;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ leave_type }}
+                                                </td>
+                                            </tr>
+
+
+                                            <!-- Dates -->
+
+                                            <tr>
+                                                <td
+                                                    class="leave-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Dates:
+                                                </td>
+
+                                                <td
+                                                    class="leave-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #10251d;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ start_date }} to {{ end_date }}
+                                                </td>
+                                            </tr>
+
+
+                                            <!-- Duration -->
+
+                                            <tr>
+                                                <td
+                                                    class="leave-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    Duration:
+                                                </td>
+
+                                                <td
+                                                    class="leave-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #10251d;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        font-weight: 700;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ duration }} day(s)
+                                                </td>
+                                            </tr>
+
+
+                                            <!-- HR Remarks -->
+
+                                            <tr>
+                                                <td
+                                                    class="leave-label"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #64748b;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.5;
+                                                        width: 140px;
+                                                        font-weight: 600;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    HR Remarks:
+                                                </td>
+
+                                                <td
+                                                    class="leave-value"
+                                                    style="
+                                                        padding: 7px 0;
+                                                        color: #475569;
+                                                        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                        font-size: 13px;
+                                                        line-height: 1.65;
+                                                        font-weight: 400;
+                                                        vertical-align: top;
+                                                    "
+                                                >
+                                                    {{ hr_remarks }}
+                                                </td>
+                                            </tr>
+
+                                        </table>
+
                                     </td>
                                 </tr>
                             </table>
 
-                            <!-- CTA Button -->
+
+                            <!-- =================================================
+                                 CTA BUTTON
+                                 ================================================= -->
+
                             <table
+                                role="presentation"
                                 width="100%"
-                                cellpadding="0"
                                 cellspacing="0"
+                                cellpadding="0"
                                 border="0"
-                                style="margin-bottom: 25px;"
+                                style="
+                                    width: 100%;
+                                    margin-bottom: 26px;
+                                "
                             >
                                 <tr>
                                     <td align="center">
+
                                         <a
                                             href="{{ login_url }}"
                                             target="_blank"
+                                            class="cta-button"
                                             style="
                                                 display: inline-block;
-                                                background-color: #2563eb;
+                                                background-color: #16a34a;
                                                 color: #ffffff;
                                                 text-decoration: none;
-                                                font-size: 15px;
-                                                font-weight: 600;
-                                                padding: 12px 28px;
-                                                border-radius: 6px;
+                                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                                font-size: 14px;
+                                                line-height: 1.2;
+                                                font-weight: 700;
+                                                padding: 14px 29px;
+                                                border-radius: 8px;
+                                                letter-spacing: 0.2px;
+                                                box-shadow: 0 5px 15px rgba(22, 163, 74, 0.22);
                                             "
                                         >
                                             View Leave Details in HRMS
                                         </a>
+
                                     </td>
                                 </tr>
                             </table>
 
-                            <!-- Copyable URL Box -->
+
+                            <!-- =================================================
+                                 FALLBACK URL
+                                 ================================================= -->
+
                             <p style="
-                                margin: 0 0 8px;
-                                color: #6b7280;
-                                font-size: 13px;
+                                margin: 0 0 9px;
+                                color: #64748b;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+                                font-size: 12px;
+                                line-height: 1.6;
+                                font-weight: 400;
                             ">
                                 If the button above does not work, copy and paste this URL into your browser:
                             </p>
 
-                            <div style="
-                                background-color: #f3f4f6;
-                                border: 1px solid #e5e7eb;
-                                border-radius: 6px;
-                                padding: 10px 12px;
-                                word-break: break-all;
-                                font-family: monospace;
-                                font-size: 13px;
-                                color: #1f2937;
-                            ">
+
+                            <div
+                                class="url-box"
+                                style="
+                                    background-color: #f8fafc;
+                                    border: 1px solid #dbe4e8;
+                                    border-radius: 8px;
+                                    padding: 11px 13px;
+                                    word-break: break-all;
+                                    overflow-wrap: anywhere;
+                                    font-family: 'Courier New', Courier, monospace;
+                                    font-size: 12px;
+                                    line-height: 1.55;
+                                    color: #334155;
+                                "
+                            >
                                 {{ login_url }}
                             </div>
 
                         </td>
                     </tr>
 
-                    <!-- Footer -->
+
+                    <!-- =================================================
+                         FOOTER
+                         ================================================= -->
+
                     <tr>
                         <td
+                            align="center"
+                            class="footer-content"
                             style="
-                                background-color: #f9fafb;
-                                border-top: 1px solid #e5e7eb;
-                                padding: 25px 40px;
+                                background-color: #f7faf8;
+                                border-top: 1px solid #dfeae4;
+                                padding: 28px 38px;
                                 text-align: center;
                             "
                         >
+
+                            <!-- Footer Accent -->
+
+                            <table
+                                role="presentation"
+                                cellspacing="0"
+                                cellpadding="0"
+                                border="0"
+                                style="margin: 0 auto 13px;"
+                            >
+                                <tr>
+                                    <td
+                                        width="28"
+                                        height="3"
+                                        style="
+                                            width: 28px;
+                                            height: 3px;
+                                            background-color: #16a34a;
+                                            border-radius: 10px;
+                                            font-size: 0;
+                                            line-height: 0;
+                                        "
+                                    >
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </table>
+
+
                             <p style="
                                 margin: 0 0 6px;
-                                color: #6b7280;
+                                color: #1e3a2f;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                 font-size: 13px;
-                                font-weight: 600;
+                                line-height: 1.5;
+                                font-weight: 700;
                             ">
                                 Mediatize Tech HRMS
                             </p>
 
+
                             <p style="
-                                margin: 0 0 10px;
-                                color: #9ca3af;
+                                margin: 0 0 11px;
+                                color: #64748b;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                 font-size: 12px;
+                                line-height: 1.5;
+                                font-weight: 400;
                             ">
                                 Mediatize Tech Pvt. Ltd.
                             </p>
 
+
                             <p style="
                                 margin: 0;
-                                color: #9ca3af;
+                                color: #94a3b8;
+                                font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
                                 font-size: 11px;
-                                line-height: 1.4;
+                                line-height: 1.6;
+                                font-weight: 400;
                             ">
                                 This is an automated email notification from Mediatize Tech HRMS. Please do not reply directly to this message.
                             </p>
+
                         </td>
                     </tr>
 

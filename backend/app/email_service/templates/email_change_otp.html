@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your New Email Address</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f3f4f6; color: #1f2937;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f3f4f6; padding: 30px 15px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width: 580px; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background-color: #1e293b; padding: 28px 32px; text-align: left;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td>
+                                        <h1 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 700; letter-spacing: -0.5px;">Mediatize Tech HRMS</h1>
+                                        <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 13px;">Human Resource Management System</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Body Content -->
+                    <tr>
+                        <td style="padding: 36px 32px; background-color: #ffffff;">
+                            <h2 style="margin: 0 0 16px 0; color: #0f172a; font-size: 18px; font-weight: 600;">Verify Your New Email Address</h2>
+                            
+                            <p style="margin: 0 0 20px 0; color: #475569; font-size: 14px; line-height: 1.6;">
+                                Hello {{ employee_name }},
+                            </p>
+
+                            <p style="margin: 0 0 24px 0; color: #475569; font-size: 14px; line-height: 1.6;">
+                                A request was made to change the email address associated with your HRMS account. Please use the 6-digit verification code below to confirm this new email address:
+                            </p>
+
+                            <!-- OTP Box -->
+                            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; text-align: center; margin-bottom: 24px;">
+                                <span style="font-family: 'Courier New', Courier, monospace, monospace; font-size: 36px; font-weight: 700; color: #2563eb; letter-spacing: 8px; display: inline-block;">{{ otp_code }}</span>
+                            </div>
+
+                            <p style="margin: 0 0 20px 0; color: #475569; font-size: 14px; line-height: 1.6;">
+                                This verification code is valid for <strong>{{ expire_minutes }} minutes</strong>.
+                            </p>
+
+                            <!-- Security Warning -->
+                            <div style="background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 14px 16px; border-radius: 4px; margin-bottom: 24px;">
+                                <p style="margin: 0 0 8px 0; color: #92400e; font-size: 13px; line-height: 1.5; font-weight: 600;">
+                                    Security Notice:
+                                </p>
+                                <ul style="margin: 0; padding-left: 18px; color: #92400e; font-size: 13px; line-height: 1.5;">
+                                    <li>Do not share this verification code with anyone.</li>
+                                    <li>If you did not request this change, please contact HR/administrator immediately.</li>
+                                    <li>Your HRMS account email address will only change after successful OTP verification.</li>
+                                </ul>
+                            </div>
+
+                            <p style="margin: 0; color: #64748b; font-size: 13px; line-height: 1.5;">
+                                If you did not request this email address change, please ignore this email or secure your account.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #f8fafc; padding: 20px 32px; border-top: 1px solid #e2e8f0; text-align: center;">
+                            <p style="margin: 0 0 4px 0; color: #64748b; font-size: 12px; font-weight: 500;">Mediatize Tech Pvt. Ltd.</p>
+                            <p style="margin: 0; color: #94a3b8; font-size: 11px;">This is an automated system email. Please do not reply directly to this address.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,438 @@
+/* =========================================================
+   HR PROFILE — MODERN EMERALD / TEAL THEME
+   UI COLORS + SUBTLE ANIMATIONS ONLY
+   ========================================================= */
+
+.hr-profile-container {
+  --hr-primary: #10b981;
+  --hr-primary-dark: #059669;
+  --hr-primary-light: #d1fae5;
+  --hr-primary-soft: rgba(16, 185, 129, 0.10);
+  --hr-primary-glow: rgba(16, 185, 129, 0.18);
+
+  --hr-text: #0f172a;
+  --hr-muted: #64748b;
+  --hr-border: #dbe4e8;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.hr-profile-header-icon {
+  background: rgba(16, 185, 129, 0.10) !important;
+  color: #059669 !important;
+}
+
+
+/* =========================================================
+   TITLES
+   ========================================================= */
+
+.hr-profile-title,
+.hr-hero-name,
+.hr-details-section-title {
+  color: var(--text-main, #0f172a);
+}
+
+.hr-profile-subtitle,
+.hr-hero-email-sub {
+  color: var(--text-muted, #64748b);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.hr-profile-spinner {
+  border-color: rgba(16, 185, 129, 0.15) !important;
+  border-top-color: #10b981 !important;
+}
+
+
+/* =========================================================
+   MAIN PROFILE CARD
+   ========================================================= */
+
+.hr-profile-card {
+  border-color: var(--border-color, #dbe4e8);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 185, 129, 0.025),
+      transparent 45%
+    ),
+    var(--bg-card, #ffffff);
+
+  box-shadow:
+    0 8px 28px rgba(15, 23, 42, 0.045);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hr-profile-card:hover {
+  border-color: rgba(16, 185, 129, 0.28);
+
+  box-shadow:
+    0 12px 34px rgba(16, 185, 129, 0.07);
+}
+
+
+/* =========================================================
+   STATUS BADGE
+   ========================================================= */
+
+.hr-badge-active {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.20);
+}
+
+
+/* =========================================================
+   HR ROLE PILL
+   ========================================================= */
+
+.hr-role-pill {
+  background: rgba(16, 185, 129, 0.10) !important;
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.18);
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.hr-hero-avatar-wrapper {
+  border-color: #10b981 !important;
+
+  box-shadow:
+    0 5px 18px rgba(16, 185, 129, 0.18);
+}
+
+.hr-hero-avatar-placeholder,
+.hr-photo-avatar-placeholder {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 185, 129, 0.13),
+      rgba(20, 184, 166, 0.06)
+    ) !important;
+
+  color: #059669 !important;
+}
+
+.hr-photo-avatar-wrapper {
+  border-color: rgba(16, 185, 129, 0.28) !important;
+
+  box-shadow:
+    0 4px 14px rgba(16, 185, 129, 0.08);
+}
+
+
+/* =========================================================
+   DETAIL LABEL ICONS
+   ========================================================= */
+
+.hr-details-label-icon,
+.hr-field-icon {
+  color: #10b981 !important;
+}
+
+
+/* =========================================================
+   DETAIL ITEMS
+   ========================================================= */
+
+.hr-details-item {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 185, 129, 0.035),
+      var(--bg-hover, #f8fafc)
+    ) !important;
+
+  border-color: var(--border-color, #dbe4e8);
+
+  transition:
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.hr-details-item:hover {
+  border-color: rgba(16, 185, 129, 0.25);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(16, 185, 129, 0.06);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.hr-input,
+.hr-textarea {
+  border-color: var(--border-color, #cbd5e1) !important;
+
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.hr-input:focus,
+.hr-textarea:focus {
+  border-color: #10b981 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.13) !important;
+}
+
+
+/* =========================================================
+   PHOTO BUTTON
+   ========================================================= */
+
+.hr-btn-photo {
+  background: rgba(16, 185, 129, 0.08) !important;
+  color: #047857 !important;
+
+  border-color: rgba(16, 185, 129, 0.22) !important;
+}
+
+.hr-btn-photo:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.15) !important;
+
+  border-color: rgba(16, 185, 129, 0.35) !important;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DANGER BUTTON
+   Keep red because it represents destructive action.
+   ========================================================= */
+
+.hr-btn-danger {
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #dc2626 !important;
+
+  border-color: rgba(239, 68, 68, 0.25) !important;
+}
+
+.hr-btn-danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.14) !important;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.hr-btn-cancel {
+  color: var(--text-main, #0f172a);
+
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.hr-btn-cancel:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.05) !important;
+
+  border-color: rgba(16, 185, 129, 0.25) !important;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.hr-btn-save,
+.hr-btn-edit-main {
+  background:
+    linear-gradient(
+      135deg,
+      #10b981,
+      #059669
+    ) !important;
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 5px 15px rgba(16, 185, 129, 0.18) !important;
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease !important;
+}
+
+.hr-btn-save:hover:not(:disabled),
+.hr-btn-edit-main:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #059669,
+      #047857
+    ) !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(16, 185, 129, 0.25) !important;
+}
+
+.hr-btn-save:active:not(:disabled),
+.hr-btn-edit-main:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+.dark .hr-profile-container {
+  --hr-text: #f8fafc;
+  --hr-muted: #94a3b8;
+  --hr-border: #243244;
+}
+
+.dark .hr-profile-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 185, 129, 0.055),
+      transparent 45%
+    ),
+    var(--bg-card, #111827) !important;
+
+  border-color: var(--border-color, #243244);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+.dark .hr-profile-card:hover {
+  border-color: rgba(16, 185, 129, 0.28);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.30);
+}
+
+.dark .hr-profile-header-icon {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #34d399 !important;
+}
+
+.dark .hr-role-pill {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+}
+
+.dark .hr-badge-active {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #6ee7b7 !important;
+}
+
+.dark .hr-details-item {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(16, 185, 129, 0.045),
+      rgba(15, 23, 42, 0.65)
+    ) !important;
+
+  border-color: #243244;
+}
+
+.dark .hr-details-item:hover {
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.dark .hr-hero-avatar-placeholder,
+.dark .hr-photo-avatar-placeholder {
+  background: rgba(16, 185, 129, 0.10) !important;
+  color: #34d399 !important;
+}
+
+.dark .hr-btn-photo {
+  background: rgba(16, 185, 129, 0.10) !important;
+  color: #6ee7b7 !important;
+}
+
+.dark .hr-btn-photo:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.17) !important;
+}
+
+.dark .hr-btn-cancel:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+
+/* =========================================================
+   SUBTLE PAGE ELEMENT ANIMATION
+   No continuous movement.
+   ========================================================= */
+
+.hr-profile-header-icon {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.hr-profile-header-icon:hover {
+  transform: scale(1.04);
+}
+
+.hr-hero-avatar-wrapper {
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hr-hero-avatar-wrapper:hover {
+  box-shadow:
+    0 7px 22px rgba(16, 185, 129, 0.24);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hr-profile-card,
+  .hr-details-item,
+  .hr-btn,
+  .hr-input,
+  .hr-textarea,
+  .hr-profile-header-icon,
+  .hr-hero-avatar-wrapper {
+    transition: none !important;
+  }
+
+  .hr-details-item:hover,
+  .hr-btn-photo:hover:not(:disabled),
+  .hr-btn-cancel:hover:not(:disabled),
+  .hr-btn-save:hover:not(:disabled),
+  .hr-btn-edit-main:hover,
+  .hr-profile-header-icon:hover {
+    transform: none !important;
+  }
+}

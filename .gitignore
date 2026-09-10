@@ -1,0 +1,39 @@
+# Python virtual environments
+backend/hrms-backend-env/
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Frontend build
+dist/
+frontend/dist/
+build/
+.vite/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

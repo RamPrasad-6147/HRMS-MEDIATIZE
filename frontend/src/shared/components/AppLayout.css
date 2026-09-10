@@ -1,0 +1,1157 @@
+/* HRMS Layout System - Production Enterprise Styling */
+
+:root {
+  --sidebar-width: 260px;
+  --header-height: 64px;
+}
+
+.hrms-app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.hrms-app-container.collapsed {
+  --sidebar-width: 72px;
+}
+
+
+/* =========================================================
+   DESKTOP SIDEBAR (≥1024px)
+   ========================================================= */
+
+.hrms-sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 90;
+  transition: width 0.2s ease, transform var(--transition-normal);
+}
+
+.hrms-sidebar-brand {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: padding 0.2s ease;
+}
+
+.hrms-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.hrms-brand-logo {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--info-color) 100%
+  );
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.hrms-brand-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hrms-sidebar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.hrms-sidebar-toggle-btn:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.hrms-sidebar-toggle-btn:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.hrms-sidebar-nav {
+  flex: 1;
+  padding: 1.25rem 0.875rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  transition: padding 0.2s ease;
+}
+
+.hrms-nav-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0.75rem 0.75rem 0.375rem 0.75rem;
+  white-space: nowrap;
+}
+
+.hrms-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.hrms-nav-item:hover {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.hrms-nav-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  border-left: 3px solid var(--primary-color);
+}
+
+.hrms-nav-icon {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR FOOTER
+   ========================================================= */
+
+.hrms-sidebar-footer {
+  padding: 1rem 0.875rem;
+  border-top: 1px solid var(--border-color);
+  transition: padding 0.2s ease;
+}
+
+.hrms-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--danger-border);
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hrms-logout-btn:hover {
+  background-color: var(--danger-bg);
+}
+
+
+/* =========================================================
+   COLLAPSED SIDEBAR OVERRIDES
+   ========================================================= */
+
+.hrms-sidebar.collapsed .hrms-sidebar-brand {
+  padding: 0 0.5rem;
+  justify-content: space-between;
+}
+
+.hrms-sidebar.collapsed .hrms-brand-logo {
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+}
+
+.hrms-sidebar.collapsed .hrms-sidebar-toggle-btn {
+  width: 26px;
+  height: 26px;
+}
+
+.hrms-sidebar.collapsed .hrms-sidebar-nav {
+  padding: 1.25rem 0.4rem;
+  align-items: center;
+}
+
+.hrms-sidebar.collapsed .hrms-nav-item {
+  justify-content: center;
+  padding: 0.625rem 0;
+  width: 100%;
+  border-left: none;
+  gap: 0;
+}
+
+.hrms-sidebar.collapsed .hrms-nav-item.active {
+  border-left: none;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  border-radius: var(--radius-md);
+}
+
+.hrms-sidebar.collapsed .hrms-nav-icon {
+  width: 20px;
+  margin: 0 auto;
+}
+
+.hrms-sidebar.collapsed .hrms-sidebar-footer {
+  padding: 1rem 0.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hrms-sidebar.collapsed .hrms-logout-btn {
+  justify-content: center;
+  padding: 0.625rem 0;
+  width: 100%;
+  gap: 0;
+}
+
+
+/* =========================================================
+   MAIN WRAPPER & HEADER
+   ========================================================= */
+
+.hrms-main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: calc(100% - var(--sidebar-width));
+  max-width: calc(100% - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
+  transition:
+    margin-left 0.2s ease,
+    width 0.2s ease,
+    max-width 0.2s ease;
+}
+
+.hrms-header {
+  height: var(--header-height);
+  background-color: var(--bg-header);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  transition: background-color var(--transition-normal);
+}
+
+.hrms-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hrms-hamburger-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.hrms-hamburger-btn:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+.hrms-page-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .hrms-page-title {
+    max-width: 140px;
+    font-size: 0.95rem;
+  }
+}
+
+.hrms-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+@media (max-width: 400px) {
+  .hrms-header-right {
+    gap: 0.5rem;
+  }
+}
+
+
+/* =========================================================
+   HEADER LIVE DATE & TIME WIDGET
+   ========================================================= */
+
+.hrms-header-datetime {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  line-height: 1.15;
+  padding: 0 0.75rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.hrms-header-date {
+  font-size: 0.725rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.hrms-header-date.hrms-date-short {
+  display: none;
+}
+
+.hrms-header-time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .hrms-header-date.hrms-date-full {
+    display: none;
+  }
+
+  .hrms-header-date.hrms-date-short {
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  .hrms-header-datetime {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   USER PROFILE TRIGGER
+   ========================================================= */
+
+.hrms-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.hrms-user-profile:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--primary-border);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.08);
+}
+
+.hrms-user-profile:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.hrms-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.hrms-user-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hrms-role-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   PROFILE WRAPPER
+   ========================================================= */
+
+.hrms-profile-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   PROFILE TRIGGER — OPEN STATE
+   ========================================================= */
+
+.hrms-profile-wrapper.profile-open .hrms-user-profile {
+  background-color: var(--primary-light);
+  border-color: var(--primary-color);
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.08);
+}
+
+
+/* =========================================================
+   PROFILE CHEVRON
+   ========================================================= */
+
+.hrms-profile-chevron {
+  flex-shrink: 0;
+  color: var(--primary-color);
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+   ========================================================= */
+
+.hrms-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 0.7rem);
+  right: 0;
+
+  width: 320px;
+  max-width: calc(100vw - 24px);
+
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+
+  background: var(--bg-surface);
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.16),
+    0 6px 18px rgba(16, 185, 129, 0.06);
+
+  z-index: 1000;
+
+  animation: hrms-profile-dropdown-in 0.18s ease-out;
+}
+
+
+/* =========================================================
+   DROPDOWN ANIMATION
+   ========================================================= */
+
+@keyframes hrms-profile-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-7px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================================
+   PROFILE SUMMARY
+   ========================================================= */
+
+.hrms-profile-summary {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 0.85rem;
+
+  padding: 1rem;
+
+  border: 0;
+
+  background: var(--bg-surface);
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  text-align: left;
+  font: inherit;
+
+  box-sizing: border-box;
+
+  transition: background-color 0.2s ease;
+}
+
+.hrms-profile-summary:hover {
+  background: var(--bg-surface-hover);
+}
+
+.hrms-profile-summary:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+}
+
+
+/* =========================================================
+   DROPDOWN AVATAR
+   ========================================================= */
+
+.hrms-profile-dropdown-avatar {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   DROPDOWN INFORMATION
+   ========================================================= */
+
+.hrms-profile-dropdown-info {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 0.25rem;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DROPDOWN NAME
+   ========================================================= */
+
+.hrms-profile-dropdown-name {
+  display: block;
+
+  width: 100%;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.3;
+
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DROPDOWN EMAIL
+   ========================================================= */
+
+.hrms-profile-dropdown-email {
+  display: block;
+
+  width: 100%;
+
+  color: var(--text-secondary);
+
+  font-size: 0.82rem;
+  line-height: 1.4;
+
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DROPDOWN ROLE
+   ========================================================= */
+
+.hrms-profile-dropdown-role {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.35rem;
+
+  padding: 0.25rem 0.6rem;
+
+  border: 1px solid var(--primary-border);
+  border-radius: 8px;
+
+  background: var(--primary-light);
+  color: var(--primary-color);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   DROPDOWN DIVIDER
+   ========================================================= */
+
+.hrms-profile-dropdown-divider {
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--border-subtle);
+}
+
+
+/* =========================================================
+   DROPDOWN SIGN OUT
+   ========================================================= */
+
+.hrms-profile-logout {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding: 0.9rem 1rem;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--danger-color);
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  text-align: left;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hrms-profile-logout:hover {
+  background-color: var(--danger-bg);
+  color: var(--danger-color);
+}
+
+.hrms-profile-logout:focus-visible {
+  outline: 2px solid var(--danger-color);
+  outline-offset: -2px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.hrms-main-content {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION DRAWER (<1024px)
+   ========================================================= */
+
+.hrms-mobile-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+}
+
+.hrms-mobile-backdrop.open {
+  display: block;
+}
+
+.hrms-mobile-drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 280px;
+
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+
+  z-index: 110;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(-100%);
+
+  transition: transform var(--transition-normal);
+
+  box-shadow: var(--shadow-overlay);
+}
+
+.hrms-mobile-drawer.open {
+  transform: translateX(0);
+}
+
+.hrms-mobile-header {
+  height: var(--header-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 1.25rem;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hrms-close-drawer-btn {
+  background: transparent;
+  border: none;
+
+  color: var(--text-muted);
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+
+  line-height: 1;
+
+  padding: 0.25rem;
+}
+
+.hrms-close-drawer-btn:hover {
+  color: var(--text-primary);
+}
+
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .hrms-sidebar {
+    display: none;
+  }
+
+  .hrms-main-wrapper {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hrms-hamburger-btn {
+    display: flex;
+  }
+
+  .hrms-main-content {
+    padding: 1rem;
+  }
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN — TABLET
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .hrms-profile-dropdown {
+    width: 310px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .hrms-user-info,
+  .hrms-theme-text {
+    display: none !important;
+  }
+
+  .hrms-header {
+    padding: 0 0.875rem;
+  }
+
+  .hrms-header-left {
+    gap: 0.5rem;
+  }
+
+  .hrms-header-right {
+    gap: 0.5rem;
+  }
+
+  .hrms-user-profile {
+    min-width: 42px;
+    min-height: 42px;
+
+    padding: 0.3rem;
+
+    justify-content: center;
+  }
+
+  .hrms-profile-chevron {
+    display: none;
+  }
+
+  .hrms-profile-dropdown {
+    position: fixed;
+
+    top: calc(var(--header-height) + 0.5rem);
+    right: 10px;
+
+    width: min(320px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+
+    border-radius: 15px;
+  }
+
+  .hrms-profile-summary {
+    padding: 0.9rem;
+  }
+
+  .hrms-profile-dropdown-name {
+    font-size: 0.95rem;
+  }
+
+  .hrms-profile-dropdown-email {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .Toastify__toast-container {
+    width: calc(100vw - 1.5rem) !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    margin: 0 !important;
+    top: 0.75rem !important;
+  }
+
+  .hrms-mobile-drawer {
+    width: 260px;
+    max-width: calc(100vw - 44px);
+  }
+
+  .hrms-main-content {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .hrms-profile-dropdown {
+    right: 8px;
+
+    width: calc(100vw - 16px);
+    max-width: calc(100vw - 16px);
+
+    border-radius: 14px;
+  }
+
+  .hrms-profile-summary {
+    padding: 0.9rem;
+  }
+
+  .hrms-profile-dropdown-role {
+    margin-top: 0.3rem;
+  }
+
+  .hrms-profile-logout {
+    padding: 0.85rem 0.9rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .hrms-header {
+    padding: 0 0.6rem;
+  }
+
+  .hrms-header-right {
+    gap: 0.35rem;
+  }
+
+  .hrms-profile-dropdown {
+    right: 6px;
+
+    width: calc(100vw - 12px);
+    max-width: calc(100vw - 12px);
+  }
+
+  .hrms-profile-summary {
+    gap: 0.7rem;
+  }
+
+  .hrms-profile-dropdown-name {
+    font-size: 0.9rem;
+  }
+
+  .hrms-profile-dropdown-email {
+    font-size: 0.76rem;
+  }
+}
+
+
+/* =========================================================
+   EMPLOYEE DIRECTORY RESPONSIVE TOGGLE
+   ========================================================= */
+
+.employee-desktop-table {
+  display: block;
+}
+
+.employee-mobile-cards {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .employee-desktop-table {
+    display: none !important;
+  }
+
+  .employee-mobile-cards {
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+/* =========================================================
+   MODAL & FORM GRID RESPONSIVE STYLES
+   ========================================================= */
+
+.hrms-form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 639px) {
+  .hrms-form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.hrms-modal-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .hrms-modal-footer-actions {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .hrms-modal-footer-actions button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   DARK MODE — PROFILE DROPDOWN
+   ========================================================= */
+
+.dark .hrms-user-profile,
+[data-theme="dark"] .hrms-user-profile {
+  background-color: #0a1510;
+  border-color: #17382b;
+}
+
+.dark .hrms-user-profile:hover,
+[data-theme="dark"] .hrms-user-profile:hover {
+  background-color: #0d1d15;
+  border-color: rgba(52, 211, 153, 0.32);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.dark .hrms-profile-wrapper.profile-open .hrms-user-profile,
+[data-theme="dark"] .hrms-profile-wrapper.profile-open .hrms-user-profile {
+  background-color: rgba(16, 185, 129, 0.10);
+  border-color: #34d399;
+
+  box-shadow:
+    0 0 0 3px rgba(52, 211, 153, 0.08);
+}
+
+.dark .hrms-profile-dropdown,
+[data-theme="dark"] .hrms-profile-dropdown {
+  background-color: #07110d;
+  border-color: #17382b;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.60);
+}
+
+.dark .hrms-profile-summary,
+[data-theme="dark"] .hrms-profile-summary {
+  background-color: #07110d;
+}
+
+.dark .hrms-profile-summary:hover,
+[data-theme="dark"] .hrms-profile-summary:hover {
+  background-color: #0c1b15;
+}
+
+.dark .hrms-profile-dropdown-name,
+[data-theme="dark"] .hrms-profile-dropdown-name {
+  color: #f2fff9;
+}
+
+.dark .hrms-profile-dropdown-email,
+[data-theme="dark"] .hrms-profile-dropdown-email {
+  color: #9cc1b0;
+}
+
+.dark .hrms-profile-dropdown-role,
+[data-theme="dark"] .hrms-profile-dropdown-role {
+  background-color: rgba(16, 185, 129, 0.12);
+  border-color: rgba(52, 211, 153, 0.28);
+  color: #6ee7b7;
+}
+
+.dark .hrms-profile-dropdown-divider,
+[data-theme="dark"] .hrms-profile-dropdown-divider {
+  background-color: #17382b;
+}
+
+.dark .hrms-profile-logout:hover,
+[data-theme="dark"] .hrms-profile-logout:hover {
+  background-color: rgba(239, 68, 68, 0.10);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hrms-sidebar,
+  .hrms-main-wrapper,
+  .hrms-mobile-drawer,
+  .hrms-profile-dropdown,
+  .hrms-user-profile,
+  .hrms-profile-summary,
+  .hrms-profile-logout {
+    animation: none !important;
+    transition: none !important;
+  }
+}
